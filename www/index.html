@@ -43,8 +43,7 @@
         })
     }
 
-/*
-    function searchType() {
+    function searchType2() {
       let type2 = $("#type2").val();
       let TestDataClass = ncmb.DataStore(db);
       TestDataClass
@@ -53,7 +52,6 @@
           showResults(results);
         })
     }
-*/
 
     function searchNumberLT() {
       let number = parseInt($("#number").val());
@@ -85,69 +83,6 @@
         })
     }
 
-    /*
-    function searchAttack() {
-      let attack = parseInt($("#attack").val());
-      let TestDataClass = ncmb.DataStore(db);
-      TestDataClass
-        .equalTo("attack", attack).fetchAll()
-        .then(function(results) {
-          showResults(results);
-        })
-    }
-
-    function searchAttackLT() {
-      let attack = parseInt($("#attack").val());
-      let TestDataClass = ncmb.DataStore(db);
-      TestDataClass
-        .lessThan("attack", attack).order("attack", true).fetchAll()
-        .then(function(results) {
-          showResults(results);
-        })
-    }
-
-    function searchAttackGT() {
-      let attack = parseInt($("#attack").val());
-      let TestDataClass = ncmb.DataStore(db);
-      TestDataClass
-        .greaterThan("attack", attack).order("attack", true).fetchAll()
-        .then(function(results) {
-          showResults(results);
-        })
-    }
-
-    function searchDefence() {
-      let defence = parseInt($("#defence").val());
-      let TestDataClass = ncmb.DataStore(db);
-      TestDataClass
-        .equalTo("defence", defence).fetchAll()
-        .then(function(results) {
-          showResults(results);
-        })
-    }
-
-    function searchDefenceLT() {
-      let defence = parseInt($("#defence").val());
-      let TestDataClass = ncmb.DataStore(db);
-      TestDataClass
-        .lessThan("defence", defence).order("defence", true).fetchAll()
-        .then(function(results) {
-          showResults(results);
-        })
-    }
-    
-
-    function searchDefenceGT() {
-      let defence = parseInt($("#defence").val());
-      let TestDataClass = ncmb.DataStore(db);
-      TestDataClass
-        .greaterThan("defence", defence).order("defence", true).fetchAll()
-        .then(function(results) {
-          showResults(results);
-        })
-    }
-    */
-
     function showResults(results) {
       // テーブルのヘッダを生成
       let msg = "<table><tr><th>number</th><th>name</th><th>type</th><th>type2</th></tr>";
@@ -168,9 +103,9 @@
 </head>
 
 <body>
-  <h1>mBaaS search</h1>
+  <h3>シンオウ地方 図鑑</h3>
   <div>
-    <label for="attack">number:</label>
+    <label for="number">number:</label>
     <input id="number" type="number" placeholder="monster number">
   </div>
   <div>
@@ -178,13 +113,19 @@
     <input id="name" type="text" placeholder="monster name">
   </div>
   <div>
-    <label for="level">type:</label>
+    <label for="type">type:</label>
     <input id="type" type="text" placeholder="monster type">
+  </div>
+  <div>
+    <label for="type2">type2:</label>
+    <input id="type2" type="text" placeholder="monster type2">
   </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button>
+    <br>
     <button class="btn" onclick="searchType()">Type</button>
+    <button class="btn" onclick="searchType2()">Type2</button>
     <br>
     <button class="btn" onclick="searchNumberLT()">Number &lt</button>
     <button class="btn" onclick="searchNumber()">Number</button>
